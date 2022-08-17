@@ -1,0 +1,125 @@
+body {
+    font-family: 'Merriweather', serif;
+    font-family: 'Patrick Hand', cursive;
+    font-family: 'Playfair Display', serif;
+    background-color: ghostwhite;
+    color: black;
+}
+
+section {
+    padding: 15px;
+    margin: 10px;
+}
+
+h1{
+    font-size: x-large;
+    font-weight: light;
+}
+
+h2{
+    font-size: large;
+    font-weight: lighter;
+}
+
+#experience {
+    background-color: lavenderblush;
+    border-radius: 20px;
+    padding: 25px 30px;
+    margin: 10px;
+}
+
+#skill {
+    background-color: gainsboro;    
+    border-radius: 20px;
+    padding: 25px 30px;
+    margin: 20px;
+}
+
+h1{
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+h2{
+    font-size: x-large;
+    font-weight: bolder;
+}
+
+button{
+  background-color: rgb(122, 130, 141);
+  border: none;
+  color: #fff;
+  padding: 7px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#message{
+    padding: 15px 20px;
+    margin: 10px;
+}
+
+#connect{
+    padding: 25px 30px;
+    margin: 20px;
+}
+
+#skill ul{
+    list-style-type: upper-roman;
+}
+
+#experience ul{
+    list-style-type: circle;
+}
+
+#connect ul{
+    list-style-type: square;
+}
+
+#main-nav{
+    float: center;
+    overflow: hidden;
+    text-align: center;
+    padding: 14px 16px;
+    font-size: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-evenly;
+}
+
+#message{
+    padding: 4px;
+    margin: 7px 12px;
+    text-align: center;
+    font-size: medium;
+    border-style: dotted;
+    border-radius: 15px;
+    border-color: rgb(66, 126, 123);
+    text-decoration:underline;
+}
+
+#messages{
+    text-align: center;
+    border-style: groove;
+    border-color: rgb(144, 204, 171);
+}
+
+#message_text{
+    text-decoration: underline;
+}
+
+#message ul{
+    list-style-type: square;
+}
+
+footer{
+    margin-top: 60px;
+    border-top: 20px;
+}
+
+@media all and (max-width: 800px){
+    body{
+        color: black;
+        font-size: large;
+    }
+}
