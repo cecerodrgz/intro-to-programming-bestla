@@ -9,7 +9,7 @@ copyRight.innerHTML = `Cecilia Rodriguez, ${thisYear}`;
 footer.appendChild(copyRight);
 
 //skill list
-const skills = ['HTML', 'CSS', 'JavaScript'];
+const skills = ['JavaScript', 'CSS', 'HTML'];
 const skillSection = document.getElementById('skill');
 const skillsList = skillSection.querySelector('ul');
 for (let i = 0; i < skills.length; i++) {
