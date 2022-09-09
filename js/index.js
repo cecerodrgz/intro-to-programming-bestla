@@ -5,19 +5,19 @@ let today = new Date();
 let thisYear = today.getFullYear();
 let footer = document.querySelector('footer');
 let copyRight = document.createElement('p');
-copyRight.innerHTML = `Cecilia Rodriguez, ${thisYear}`;
+copyRight.innerHTML = `&copy; Cecilia Rodriguez, ${thisYear}`;
 footer.appendChild(copyRight);
  
 //skill list
-const skills = ['JavaScript', 'CSS', 'HTML'];
-const skillSection = document.getElementById('skill');
-const skillsList = skillSection.querySelector('ul');
-for (let i = 0; i < skills.length; i++) {
-    const skill = document.createElement('li');
-    skill.innerHTML = skills[i];
-    skillsList.appendChild(skill);
-};
- 
+const skills = ['HTML', 'CSS', 'JavaScript'];
+ const skillSection = document.getElementById('skill');
+ const skillsList = skillSection.querySelector('ul');
+ for (let i = 0; i < skills.length; i++) {
+     const skill = document.createElement('li');
+     skill.innerHTML = skills[i];
+     skillsList.appendChild(skill);
+ };
+
 //lesson-4-3
  
 //leave message area
@@ -70,4 +70,33 @@ function scrollFunction() {
  
 function topFunction() {
   document.documentElement.scrollTop = 0;
+}
+
+//lesson-6-1
+const githubRequest = new XMLHttpRequest();
+githubRequest.onreadystatechange = function () {
+  if(githubRequest.readyState === 4) {
+    if(githubRequest.status === 200) {
+      console.log(githubRequest.responseText);
+  }
+    else if (githubRequest.status === 404){
+      console.log('File or response not found')
+    }
+  }
+};
+
+githubRequest.open('GET', 'https://api.github.com/users/cecerodrgz/repos');
+githubRequest.send();
+githubRequest.onload = () => {
+  const repositories = JSON.parse(githubRequest.response);
+
+  const projectList = document.getElementById('projectsList');
+  for(let i = 0; i < repositories.length; i++) {
+  const project = document.createElement('li');
+  const repoLink = document.createElement('a');
+  repoLink.href = repositories[i].html_url;
+  repoLink.innerHTML = repositories[i].name;
+  project.appendChild(repoLink);
+  projectList.appendChild(project);
+};
 }
