@@ -8,8 +8,11 @@
         <link rel="stylesheet" href="css/index.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,700&family=Patrick+Hand&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
-</head>
+        <link rel="preconnect" href="https://fonts.googleapis.com"> 
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
         <body>
             <header>
              <nav id = 'main-header'>
@@ -20,6 +23,7 @@
                     <div id = 'item'><a href = "#experience">Experience</a></div>
                     <div id = 'item'><a href = "#skill">Skills</a></div>
                 </div>
+                <hr>
             </header>
  
            <section id = 'about'>
@@ -46,29 +50,25 @@
                     <h2>Projects</h2>
                     <ul id="projectsList"></ul>
                 </section>
-                   
-                <section id ='connect'>
-                        <h2>Connect:</h2>
-                            <ul>
-                                <li><strong>Email:</strong> <a href="mailto:cecirodrgz71@gmail.com">cecirodrgz71@gmail.com</a></li>
-                                <li><strong>GitHub:</strong> <a href="https://github.com/cecerodrgz" target="_blank">cecerodrgz</a></li>
-                                <li><strong>Replit:</strong> <a href="https://replit.com/@cecerodrgz" target="_blank">Cecilia Rodriguez</a></li>
-                            </ul>
-                    </section>
-   
-   
+
     <section id="message">
         <h2>Leave a message</h2>
         <form name="leave_message">
-            <label for="name">Name:</label><br>
-            <input type="text" name="name" required="true" placeholder="Full Name"><br>
- 
+            <div id="field-name">
+            <label id= 'name' for="name">Name:</label><br>
+            <input id='input-name' type="text" name="name" required="true" placeholder="Full Name"><br>
+            </div>
+
+            <div id="field-email">
             <label for="email">Email:</label><br>
-            <input type="email" name="email" placeholder="Email address..." required="true"><br>
- 
-            <label for="message">Message:</label><br>
-            <textarea name="message" placeholder= 'Type your comment...' required="true"></textarea><br>
-           
+            <input class='input-email'type="email" name="email" placeholder="Email address" required="true"><br>
+            </div>
+
+            <div id="field-message">
+            <label id='message'for="message">Message:</label><br>
+            <textarea class='input-message' name="message" placeholder= 'Type your comment...' required="true"></textarea><br>
+            </div>
+
             <button type="submit">Submit</button>
         </form>
     </section>
@@ -78,10 +78,18 @@
         <ul>
  
         </ul>
-    </section>
+        </section>
+
     <footer>
+     <hr>
+        <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+            <section id="connect">
+            <a href="mailto:cecirodrgz71@gmail.com" class="fa fa-envelope" style="font-size: 20px; color:black;"></a>
+            <a href="https://github.com/cecerodrgz" class="fa fa-github" style="font-size: 25px; color: black;"></a>
+            <a href="https://www.facebook.com/cecirodrgz/" class="fa fa-facebook-square" style="font-size: 25px; color:black;"></a>
+            <a href="https://www.instagram.com/cecerodrgz/" class="fa fa-instagram" style="font-size: 25px; color: black;"></a>
+            </section>
     </footer>
-    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
     <script src = 'js/index.js'></script>
 </body>
 </html>

@@ -23,14 +23,11 @@ const skills = ['HTML', 'CSS', 'JavaScript'];
 //leave message area
  
 const messageForm = document.getElementsByName('leave_message')[0];
-console.log(messageForm);
 messageForm.addEventListener('submit', myEvent => {
     myEvent.preventDefault();
     const name = myEvent.target.name;
     const email = myEvent.target.email;
     const message = myEvent.target.message;
- 
-    console.log('form submitted');
  
     const messageSection = document.getElementById('messages');
     const messageList = messageSection.querySelector('ul');
@@ -72,31 +69,20 @@ function topFunction() {
   document.documentElement.scrollTop = 0;
 }
 
-//lesson-6-1
-const githubRequest = new XMLHttpRequest();
-githubRequest.onreadystatechange = function () {
-  if(githubRequest.readyState === 4) {
-    if(githubRequest.status === 200) {
-      console.log(githubRequest.responseText);
-  }
-    else if (githubRequest.status === 404){
-      console.log('File or response not found')
-    }
-  }
-};
-
-githubRequest.open('GET', 'https://api.github.com/users/cecerodrgz/repos');
-githubRequest.send();
-githubRequest.onload = () => {
-  const repositories = JSON.parse(githubRequest.response);
-
-  const projectList = document.getElementById('projectsList');
-  for(let i = 0; i < repositories.length; i++) {
-  const project = document.createElement('li');
-  const repoLink = document.createElement('a');
-  repoLink.href = repositories[i].html_url;
-  repoLink.innerHTML = repositories[i].name;
-  project.appendChild(repoLink);
-  projectList.appendChild(project);
-};
-}
+//lesson-6-2
+const githubRequest = 'https://api.github.com/users/cecerodrgz/repos';
+fetch (githubRequest)
+  .then(response => response.json())
+    .then(repositories => {
+      const projectList = document.getElementById('projectsList');
+      for(let i = 0; i < repositories.length; i++) {
+      const project = document.createElement('li');
+      const repoLink = document.createElement('a');
+      repoLink.href = repositories[i].html_url;
+      repoLink.innerHTML = repositories[i].name;
+      project.appendChild(repoLink);
+      projectList.appendChild(project); 
+        }
+      })
+      .catch(error => alert("Something went wrong", error));
+    
