@@ -1,10 +1,11 @@
 /*Body font and design */
 body {
-    font-family: 'Merriweather', serif;
-    font-family: 'Patrick Hand', cursive;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Ubuntu', sans-serif;
     background-color: ghostwhite;
     color: black;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
 }
  
 /*Section spacing*/
@@ -50,12 +51,8 @@ button{
   border-radius: 8px;
   cursor: pointer;
   margin-top: 5px;
-}
- 
-/*Connect styling*/
-#connect{
-    padding: 25px 30px;
-    margin: 20px;
+  display: flex;
+  flex-wrap: wrap;
 }
  
 /*Unordered list bullet points*/
@@ -66,11 +63,6 @@ button{
 /*Unordered list bullet points*/
 #experience ul{
     list-style-type: circle;
-}
- 
-/*Unordered list bullet points*/
-#connect ul{
-    list-style-type: square;
 }
  
 /*Main nav styling*/
@@ -85,25 +77,10 @@ button{
     justify-content: space-evenly;
 }
  
-/*Message styling*/
-#message{
-    padding: 2px;
-    margin: 10px 240px;
-    text-align: center;
-    font-size: medium;
-    border-style: dotted;
-    border-radius: 15px;
-    border-color: rgb(66, 126, 123);
-    text-decoration:underline;
-}
- 
 /*Message border*/
 #messages{
-    text-align: left;
     border-style: groove;
-    border-color: rgb(144, 204, 171);
-    justify-content: space-between;
-    margin: 10px 250px;
+    border-color: rgb(184, 220, 200);
     padding: 50px;
 }
  
@@ -124,16 +101,7 @@ footer{
     border-top: 20px;
 }
  
-/*Media queries*/
-@media all and (max-width: 800px){
-    body{
-        color: black;
-        font-size: large;
-    }
-}
- 
 /* lesson-4-5 */
- 
 /* Blocks inside the navigation menu */
 #main-nav a {
     display: inline-block;
@@ -185,24 +153,60 @@ footer{
   }
  
 /*Input cells on message*/
-  #message input {
-    width: 15%;
-    height: 25px;
-    padding: 0 15px;
-    margin-bottom: 15px;
-    border: 4px;
-    border-radius: 2px;
-  }
- 
-  #message textarea{
-    width: 25%;
-    height: 70px;
-    padding: 15px 20px;
-  }
- 
+form {
+  display: block;
+  justify-content: space-between;
+  position: relative;
+}
+form #field-name{
+  display: inline-block;
+  margin-right: 3px;
+}
+form #input-name{
+  display: block;
+}
+form #name{
+  display: inline;
+}
+
+form #field-email{
+  display: inline-block;
+  margin-right: 3px;
+  justify-content: space-between;
+}
+
+#field-message .input-message{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  width: 50%;
+  height: 80px;
+}
+#field-email .input-email{
+  display: flex;
+  flex-wrap: wrap;
+}
+#message h2{
+  text-align:center;
+}
+
   #experience ul {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     flex-wrap: wrap;
   }
+  
+  #connect {
+    display: flex;
+    text-align: center;
+    justify-content:space-evenly;
+  }
+
+  /*Media queries*/
+@media all and (max-width: 700px){
+  body{
+      background-color:antiquewhite;
+      font-size: medium;
+}
+};
