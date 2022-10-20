@@ -206,7 +206,7 @@ form #field-email{
   /*Media queries*/
 @media all and (max-width: 700px){
   body{
-      background-color:antiquewhite;
+      background-color:ghostwhite;
       font-size: medium;
 }
 };
